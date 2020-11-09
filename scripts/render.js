@@ -1,5 +1,7 @@
 
 function populateGenreSelection() {
+    var selection = document.getElementById("genreSelection");
+    
     var genres = songsJSON["genres"];
     for (var index in genres) {
         var option = document.createElement("option");
