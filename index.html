@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "./scripts/initJSON.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            /* JSON format
+            {
+                [
+                    {
+                        "title": ---,
+                        "artists": [],
+                        "genre": ---,
+                        "releaseDate" : ---
+                    }
+                ]
+            }
+            */
+            var songsJSON = {}; // JSON to populate
+            window.onload = function () {
+                // Part 1 & 2
+                retrieveXML(function (response) {
+                    initializeJSON(response);
+                    
+                    // Part 2
+                    var containerSerializedString = document.createElement("div");
+                    containerSerializedString.innerHTML = JSON.stringify(songsJSON);
+
+                    var part2Container = document.getElementById("part2Container")
+                    part2Container.appendChild(containerSerializedString);
+                    // document.write(JSON.stringify(songsJSON));
+
+                    populateGenreSelection();
+                });
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id = "part2Container">
+
+        </div>
+        <div id = "formContainer">
+            <form id = "genreForm" onsubmit = "return false">
+                <select id = "genreSelection">
+
+                </select>
+                <input id = "filter" type = "submit" value = "Filter">
+            </form>
+        </div>
+        <div id = "setContainer">
+
+        </div>
+    </body>
+
+</html>
