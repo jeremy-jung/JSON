@@ -19,6 +19,9 @@
             */
             var songsJSON = {}; // JSON to populate
             window.onload = function () {
+                var selection = document.getElementById("genreSelection");
+                var filterButton = document.getElementById("filter");
+                
                 // Part 1 & 2
                 retrieveXML(function (response) {
                     initializeJSON(response);

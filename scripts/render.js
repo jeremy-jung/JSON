@@ -1,4 +1,3 @@
-var selection = document.getElementById("genreSelection");
 
 function populateGenreSelection() {
     var genres = songsJSON["genres"];
@@ -10,7 +9,6 @@ function populateGenreSelection() {
 }
 
 
-var filterButton = document.getElementById("filter");
 $("#filter").on("click", function () {
     console.log("pressed")
     var selectedGenre = $("#genreSelection option:selected").val();
