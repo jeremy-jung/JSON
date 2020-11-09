@@ -1,4 +1,4 @@
-{
+var music = {   "genres": ["R&B/Soul", "Pop", "Dance/electronic", "Hip-hop/rap"],
     "songs": [
         {
             "title": "Northface",

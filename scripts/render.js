@@ -18,8 +18,8 @@ $("#filter").on("click", function () {
     setContainer.innerHTML = "";
 
     console.log(selectedGenre);
-    var rule = /[&]/g
-    selectedGenre = selectedGenre.replace(rule, "&amp;");
+    // var rule = /[&]/g
+    // selectedGenre = selectedGenre.replace(rule, "&amp;");
     var songsToDisplay = getSongsByGenre(selectedGenre);
     console.log(songsToDisplay)
     displaySongs(songsToDisplay);
@@ -65,7 +65,7 @@ function displaySongs(songsToDisplay) {
         genreElement.innerHTML = "Genre: " + song.genre;
 
         var dateElement = document.createElement("div");
-        dateElement.innerHTML = "Release: " + song.date;
+        dateElement.innerHTML = "Release: " + song.releaseDate;
 
         songElement.appendChild(titleElement);
         songElement.appendChild(artistsElement);

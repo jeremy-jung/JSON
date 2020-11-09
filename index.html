@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src = "./music.js"></script>
     </head>
     <body>
         <div id = "part2Container">
@@ -31,20 +32,32 @@
                 ]
             }
             */
-            var songsJSON = {}; // JSON to populate
+           var songsJSON = {};
             window.onload = function () {
-                var filterButton = document.getElementById("filter")
+                var filterButton = document.getElementById("filter");
+                
                 // Part 1 & 2
-                retrieveXML(function (response) {
-                    initializeJSON(response)
-                    // Part 2
-                    var containerSerializedString = document.createElement("div");
-                    containerSerializedString.innerHTML = JSON.stringify(songsJSON)
-                    var part2Container = document.getElementById("part2Container")
-                    part2Container.appendChild(containerSerializedString);
-                    // document.write(JSON.stringify(songsJSON))
-                    populateGenreSelection();
-                })
+                // retrieveXML(function (response) {
+                //     initializeJSON(response)
+                //     // Part 2
+                //     var containerSerializedString = document.createElement("div");
+                //     containerSerializedString.innerHTML = JSON.stringify(songsJSON)
+                //     var part2Container = document.getElementById("part2Container")
+                //     part2Container.appendChild(containerSerializedString);
+                //     // document.write(JSON.stringify(songsJSON))
+                //     populateGenreSelection();
+                // })
+            
+
+                songsJSON = music;
+
+                var containerSerializedString = document.createElement("div");
+                containerSerializedString.innerHTML = JSON.stringify(songsJSON)
+                var part2Container = document.getElementById("part2Container")
+                part2Container.appendChild(containerSerializedString);
+                // document.write(JSON.stringify(songsJSON))
+                populateGenreSelection();
+
             }
         </script>
         <script src="./scripts/initJSON.js"></script>
